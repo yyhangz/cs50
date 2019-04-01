@@ -1,0 +1,10 @@
+Prompt user for key using CLI
+Check if there are 2 strings inputted by user, if there isnt, print Usage ./caesar key and return 1 to main function
+Check if ith character of key input is a numerical digit, where i is initially 1
+Repeat step 3 for times equal to the string length, increasing i by 1 everytime its repeated  
+Should step 3 ever return FALSE, print Usage ./caesar key and return 1 to main function, terminating caesar.c
+Should step 5 not occur, convert the string of digits into an integer and store in variable called key
+Prompt user for plain text
+Check if ith character of the string is lower, upper, and if they are, encrypt it and print encrypted character(i = 1 intially)
+If not, just print character as it is
+Repeat steps 8 and 9 for the length of string, but increase i by 1 each time
