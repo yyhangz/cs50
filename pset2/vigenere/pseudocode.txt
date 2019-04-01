@@ -1,0 +1,10 @@
+Prompt user for keyword using CLI
+Check if there are 2 strings inputted by user, if there isnt, print Usage ./vigenere keyword and return 1 to main function
+Check if ith character of keyword input is an alphabet, where i is initially 1
+Repeat step 3 for times equal to the string length, increasing i by 1 everytime its repeated  
+Should step 3 ever return FALSE, print Usage ./vigenere keyword and return 1 to main function, terminating vigenere.c
+Prompt user for plain text
+Check if ith character of the plain text is lower or upper case alphabets, or none
+If they are alphabets, encrypt it using switch function(i = 1 intially), print encrypted character and move to next key letter
+If not, just print character as it is
+Repeat steps 7 to 9 for the length of string, but increase i by 1 each time
