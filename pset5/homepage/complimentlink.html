@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+
+<html lang ="en">
+    <head>
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>
+            Compliments time
+        </title>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="catlink.html">Favourite Animal</a>
+              <a class="nav-item nav-link" href="complimentlink.html">Compliments</a>
+              <a class="nav-item nav-link" href="netflixlink.html">Yuhang's Netflix</a>
+            </div>
+          </div>
+        </nav>
+        <div class = "webalign">
+            <div id="test"></div>
+
+            <button id="what"> What? </button>
+
+            <div id="reply">
+                It's compliments time! Enter your name below to receive a compliment from me
+                <form onsubmit="compliment(); return false;">
+                    <input autocomplete="off" id="name" placeholder="Name" type='text'>
+                    <input type="submit" value="Compliment me!">
+                </form>
+            </div>
+        </div>
+    </body>
+
+    <script>
+    <!-- Timestring script -->
+        var d = new Date();
+        var hours, minutes, ampm;
+        hours = d.getHours();
+        if (hours >= 12)
+        {
+            ampm = 'pm';
+            hours %= 12;
+        }
+        else
+        {
+            ampm = 'am';
+        }
+        if(hours == 0)
+        {
+            hours = 12;
+        }
+        minutes = ('0' + d.getMinutes());
+        minutes = minutes.slice(-2);
+        document.getElementById("test").innerHTML= 'Hey, it\'s ' + hours + ':' + minutes + ampm + '. You know what that means...';
+    </script>
+
+    <script>
+        let ans = document.getElementById("reply");
+        ans.style.visibility = 'hidden';
+        document.getElementById("what").onclick= function(){
+            if (ans.style.visibility == 'hidden')
+            ans.style.visibility = 'visible';
+        }
+    </script>
+
+    <script>
+        var rawtxt;
+        var liblen = 5;
+        var complib = new Array(liblen);
+        var txtFile = new XMLHttpRequest();
+        txtFile.onload = function() {
+            if (txtFile.readyState === 4 && txtFile.status == 200) {
+                rawtxt = txtFile.responseText;
+                var pos = new Array(2);
+                    for (var i = 0; i < liblen; i++)
+                    {
+                        pos[0] = rawtxt.search(i);
+                        pos[1] = rawtxt.search(i + 1);
+                        complib[i] = rawtxt.slice(pos[0] + 1, pos[1]);
+                    }
+            }
+        window.Globalliblen = liblen;
+        window.Globalcomplib = complib;
+        }
+        txtFile.open("GET", "compliments.txt", true);
+        txtFile.send();
+    </script>
+
+    <script>
+            function compliment(){
+            var submission = document.getElementById('name').value;
+            var j = Math.floor(Math.random() * Globalliblen);
+            alert('Hey ' + submission + '! ' + Globalcomplib[j]);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

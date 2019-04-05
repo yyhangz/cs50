@@ -1,0 +1,31 @@
+.centered {
+    text-align: center;
+}
+
+.blockalign {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#netfliximg {
+    width: 586px;
+    margin: auto;
+}
+
+#links {
+    border: 1px solid LightGray;
+    width: 50%;
+    margin: auto;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.webalign{
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-family: serif;
+}
