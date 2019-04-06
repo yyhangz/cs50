@@ -28,13 +28,13 @@ int main(int argc, string argv[])
     int check;
     string test;
 // for loop with i indicates element 4, j = 3, k = 2, l = 1, m = 0
-    for(int i = 0; i < 52; i++)
+    for(int i = 0; i < 53; i++)
     {
-        for(int j = 0; j < 52; j++)
+        for(int j = 0; j < 53; j++)
         {
-            for(int k = 0; k < 52; k++)
+            for(int k = 0; k < 53; k++)
             {
-                for(int l = 0; l < 52; l++)
+                for(int l = 0; l < 53; l++)
                 {
                     for(int m = 0; m < 52; m++)
                     {
