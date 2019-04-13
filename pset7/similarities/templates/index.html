@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post" id="form1">
+            First file for comparison:  <input type="file" class="files" name="file1" id="file1"><br>
+            Second file for comparison:  <input type="file" class="files" name="file2" id="file2"><br>
+            <input type="radio" name="algorithm" value="lines" checked> Compare lines<br>
+            <input type="radio" name="algorithm" value="sentences"> Compare sentences<br>
+            <input type="radio" name="algorithm" value="substrings" id="substring"> Compare substrings
+            of length:  <input type="number" name="length" min="1" id="length"><br>
+            <input type="submit" value="Compare">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('form1').onsubmit = function() {
+        if (document.getElementById('file1').files.length == 0 || document.getElementById('file2').files.length == 0) {
+            alert('You must provide both files!');
+            return false;
+        }
+        else if (document.getElementById('substring').checked == true && document.getElementById('length').value == '') {
+
+            alert('You must provide a length of substring!');
+            return false;
+        }
+        return true;
+    };
+    </script>
+
+    <script>
+        console.log(document.getElementById('length').value)
+    </script>
+
+{% endblock %}
