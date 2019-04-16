@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/components/alerts/ -->
+<table class="table table-borderless table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Favourite Artist/Band</th>
+            <th scope="col">Vocals or Instrument</th>
+            <th scope="col">Favourite instrument type</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

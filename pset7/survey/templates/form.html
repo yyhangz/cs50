@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">
+        yyhangz's music survey
+        <small class="text-muted"> Finding out your music preferences</small>
+    </h1>
+    <br>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form id="form" action="/form" method="post">
+
+        <div class="form-group">
+            <input type="text" autocomplete="off" autofocus class="form-control" name="FavArt" id="FavArt" placeholder="Favourite Artist/Band"><br>
+        </div>
+
+        <div id="VocOrIns">
+            <label>Vocals Or Instruments</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="VocOrIns" id="Vocals" value="Vocals" checked>
+                <label class="form-check-label" for="Vocals">
+                    Vocals
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="VocOrIns" id="Instruments" value="Instruments">
+                <label class="form-check-label" for="Instruments">
+                    Instruments
+                </label>
+            </div>
+            <br>
+        </div>
+
+        <div>
+            <select class="custom-select" name="FavIns" id="FavIns">
+                <option name="FavIn" selected disabled>Favourite type of instrument</option>
+                <option name="FavIn" value="Brass Instruments">Brass Instruments</option>
+                <option name="FavIn" value="Percussion Instruments">Percussion Instruments</option>
+                <option name="FavIn" value="String Instruments">String Instruments</option>
+                <option name="FavIn" value="Woodwinds">Woodwinds</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+
+        document.getElementById('form').onsubmit= function(){
+            if (document.getElementById('FavArt').value == "" || document.getElementById('FavIns').value == "Favourite type of instrument"){
+                alert("The form is incomplete!");
+                return false;
+            }
+        };
+    </script>
+
+{% endblock %}
