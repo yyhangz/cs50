@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Welcome back {{user_val[0]["username"] }}!</h1>
+        <br>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">No. of Shares Owned</th>
+                    <th scope="col">Current Price of Stock</th>
+                    <th scope="col">Total Holding Value</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in pur_tab %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>{{ row["SUM(share)"] }}</td>
+                    <td>{{ row["price"] }}</td>
+                    <td>{{ row["hold_val"] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+                <thead class="thead-light">
+                    <tr>
+                    <th scope="col">Cash Balance: {{ user_val[0]["cash"] }}</th>
+                    <th></th>
+                    <th></th>
+                    <th scope="col" colspan="2">Total Net Worth: {{ user_val[0]["total"] }}</th>
+                    </tr>
+                </thead>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

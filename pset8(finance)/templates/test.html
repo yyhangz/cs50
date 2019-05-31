@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy shares
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <p>Current cash: {{ cur_cash }}</p>
+            <br>
+            <p>Purchase price: {{ purchase_price }}</p>
+            <br>
+            <a href="https://iextrading.com/apps/stocks">Refer to full list of company symbols</a>
+        </div>
+    </div>
+{% endblock %}

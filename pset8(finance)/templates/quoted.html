@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }} Quote
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">{{ name }} stock prices</h1>
+            <p class="lead">{{ symbol }}: {{ price }}</p>
+            <br>
+            <a href="https://iextrading.com/apps/stocks">Refer to full list of company symbols</a>
+            <br>
+            <a href="/quote">Quote another stock listng</a>
+        </div>
+    </div>
+{% endblock %}

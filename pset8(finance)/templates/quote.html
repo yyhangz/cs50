@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Check stock prices</h1>
+            <form action="/quote" method="post">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Company Symbol" type="text" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+            <br>
+            <a href="https://iextrading.com/apps/stocks">Refer to full list of company symbols</a>
+        </div>
+    </div>
+{% endblock %}
