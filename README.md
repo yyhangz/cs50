@@ -49,3 +49,12 @@ Personally, I enjoyed the lectures the most. It is hands-down the best series of
 
 5. **pset6/crack**
   * Tried to implement the recursing function I stated in memo pointer 2, but due to the limit that python has on recursively calling functions, I was only able to generate combinations of up till 2 letters. Refer to crackrecurse(notworking).py if curious about how I (attempted to) do it with the recursing method. 
+
+5. **pset8/finance**
+  * Took waayyyy too long to finish this but I'm finally done as of 31 May 2019. No particularly difficult issues faced in this pset apart from debugging /check. Couldn't use the console nor the debugger to diagnose the issues and so I only had the web console to debug the JS side of /check as well as my gut instinct to get a sense of where the code went wrong in my head.
+  
+***
+**P.S I will not be completing the final project of cs50 as I am not pursuing a certificate for this course**
+***
+
+# **And with that, Yuhang's cs50 journey over and out!**
